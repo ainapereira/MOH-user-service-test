@@ -52,6 +52,12 @@ pipeline {
                     echo "JMeter test failed"
                     exit 1
                 fi
+
+                if [ ! -s results.jtl ]; then
+                    echo "JMeter results file is empty"
+                    exit 1
+                fi
+
                 '''
             }
         }
@@ -73,7 +79,7 @@ pipeline {
     post {
 
         success {
-            mail to: 'team@example.com',
+            mail to: 'hai4uaina@gmail.com',
                  subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: """
 Hi Team,
@@ -92,7 +98,7 @@ Aina
         }
 
         failure {
-            mail to: 'team@example.com',
+            mail to: 'hai4uaina@gmail.com',
                  subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: """
 Hi Team,
