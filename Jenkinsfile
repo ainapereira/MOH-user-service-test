@@ -35,7 +35,7 @@ pipeline {
                     //publishTestNGResults testResultsPattern: '**/surefire-reports/testng-results.xml', escapeHtml: true
 
                     // Fallback for Jenkins default test report
-                    junit testResults: 'test-output/testng-results.xml', allowEmptyResults: true
+                    junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true
                 }
             }
         }
