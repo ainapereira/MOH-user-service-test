@@ -43,8 +43,9 @@ pipeline {
         stage('Run JMeter Tests') {
             steps {
                 echo 'Running JMeter tests...'
+                //mkdir -p jmeter-report //fallback if jmeter doesn't create the report directory
                 sh '''
-                mkdir -p jmeter-report
+                 rm -rf jmeter-report results.jtl
 
                 jmeter -n -t jmeter/getuser-api-load-test.jmx -l results.jtl -e -o jmeter-report
 
