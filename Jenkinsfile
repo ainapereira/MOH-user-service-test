@@ -50,12 +50,19 @@ pipeline {
                 jmeter -n -t jmeter/getuser-api-load-test.jmx -l results.jtl\
                 -j jmeter.log\
                 -Jjmeter.save.saveservice.output_format=csv \
+                -Jjmeter.save.saveservice.timestamp_format=ms \
                 -Jjmeter.save.saveservice.response_data=false \
                 -Jjmeter.save.saveservice.samplerData=true \
                 -Jjmeter.save.saveservice.label=true \
                 -Jjmeter.save.saveservice.response_code=true \
                 -Jjmeter.save.saveservice.success=true \
+                -Jjmeter.save.saveservice.successful=true \
+                -Jjmeter.save.saveservice.response_message=true \
                 -Jjmeter.save.saveservice.elapsed=true \
+                -Jjmeter.save.saveservice.thread_name=true \
+                -Jjmeter.save.saveservice.latency=true \
+                -Jjmeter.save.saveservice.connect_time=true \
+                -Jjmeter.save.saveservice.bytes=true
                 -e -o jmeter-report
 
                 if [ ! -f results.jtl ]; then
