@@ -32,10 +32,10 @@ pipeline {
             post {
                 always {
                     // Publish TestNG report
-                    publishTestNGResults testResultsPattern: '**/surefire-reports/testng-results.xml', escapeHtml: true
+                    //publishTestNGResults testResultsPattern: '**/surefire-reports/testng-results.xml', escapeHtml: true
 
                     // Fallback for Jenkins default test report
-                    //junit '**/surefire-reports/*.xml', allowEmptyResults: true
+                    junit '**/surefire-reports/*.xml', allowEmptyResults: true
                 }
             }
         }
