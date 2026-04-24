@@ -44,6 +44,7 @@ pipeline {
             steps {
                 echo 'Running JMeter tests...'
                 //mkdir -p jmeter-report //fallback if jmeter doesn't create the report directory
+                //jmeter properties are added for html reporting and to ensure we get all the necessary data in the results.jtl file for analysis
                 sh '''
                  rm -rf jmeter-report results.jtl
 
