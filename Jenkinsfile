@@ -47,7 +47,16 @@ pipeline {
                 sh '''
                  rm -rf jmeter-report results.jtl
 
-                jmeter -n -t jmeter/getuser-api-load-test.jmx -l results.jtl -e -o jmeter-report
+                jmeter -n -t jmeter/getuser-api-load-test.jmx -l results.jtl\
+                -j jmeter.log\
+                -Jjmeter.save.saveservice.output_format=csv \
+                -Jjmeter.save.saveservice.response_data=false \
+                -Jjmeter.save.saveservice.samplerData=true \
+                -Jjmeter.save.saveservice.label=true \
+                -Jjmeter.save.saveservice.response_code=true \
+                -Jjmeter.save.saveservice.success=true \
+                -Jjmeter.save.saveservice.elapsed=true \
+                -e -o jmeter-report
 
                 if [ ! -f results.jtl ]; then
                     echo "JMeter test failed"
@@ -111,6 +120,7 @@ Build Number: ${env.BUILD_NUMBER}
 Build URL: ${env.BUILD_URL}
 
 Please check the console logs and reports for details.
+
 
 Thanks,
 Aina
