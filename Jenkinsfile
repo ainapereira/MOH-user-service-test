@@ -62,7 +62,7 @@ pipeline {
                 -Jjmeter.save.saveservice.thread_name=true \
                 -Jjmeter.save.saveservice.latency=true \
                 -Jjmeter.save.saveservice.connect_time=true \
-                -Jjmeter.save.saveservice.bytes=true
+                -Jjmeter.save.saveservice.bytes=true \
                 -e -o jmeter-report
 
                 if [ ! -f results.jtl ]; then
