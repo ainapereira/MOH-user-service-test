@@ -1,0 +1,78 @@
+# File: .gitignore
+
+# Maven / Java
+**/target/
+**/target/**        # all module build outputs
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven local repo (user-specific)
+.m2/repository/
+
+# Maven wrapper (keep wrapper checked-in, but ignore generated wrapper files if any)
+!.mvn/wrapper/maven-wrapper.jar
+
+# Test reports
+**/target/surefire-reports/
+**/target/failsafe-reports/
+test-output/                       # TestNG report dir
+testng-results.xml
+*.jtl                              # JMeter result files
+results.jtl
+jmeter-report/                     # JMeter HTML report output
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# IntelliJ specific cache files
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs and temporary files
+*.log
+logs/
+hs_err_pid*
+*~
+*.swp
+
+# Build tools / wrappers / caches
+.gradle/
+build/
+out/
+
+# Coverage
+jacoco.exec
+coverage/
+
+# Credentials / keys / secrets
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.local
+
+# Containers / OS artifacts
+Thumbs.db
+docker-compose.override.yml
+
+# Node (if present)
+node_modules/
+
+# Misc
+.idea_modules/
+.vscode/
