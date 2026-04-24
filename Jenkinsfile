@@ -46,7 +46,7 @@ pipeline {
                 sh '''
                 mkdir -p jmeter-report
 
-                jmeter -n -t jmeter/user-api-load-test.jmx -l results.jtl -e -o jmeter-report
+                jmeter -n -t jmeter/getuser-api-load-test.jmx -l results.jtl -e -o jmeter-report
 
                 if [ ! -f results.jtl ]; then
                     echo "JMeter test failed"
